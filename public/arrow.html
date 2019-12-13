@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>arrow</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const TitleParts = props => (
+        <div style={{ backgroundColor: 'red', color: 'white' }}>
+          <h3>{props.title}</h3>
+        </div>
+      )
+      const ContentParts = props => (
+        <div style={{ border: '1px solid blue', margin: 15 }}>
+          <div>あらすじ: {props.body}</div>
+        </div>
+      )
+      const Book = props => (
+        <div>
+          <TitleParts title={props.title} />
+          <ContentParts body={props.body} />
+        </div>
+      )
+      ReactDOM.render(
+        <div>
+          <Book title='半分の月がのぼる空' body='二人の男女が覚悟を決めた話' />
+          <Book title='シャナ' body='とにかく熱いバトル' />
+          <Book title='SAO' body='キリトの無双' />
+        </div>,
+        document.getElementById('root')
+      )
+    </script>
+  </body>
+</html>
